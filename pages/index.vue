@@ -2,6 +2,11 @@
   <div class="wrapper">
     <NavbarView />
     <HomeCarousel />
+    <CouponBanner />
+    <HotProduct />
+    <MonthFeatured />
+    <ProductCardDiscounted />
+    <FrontFooter />
   </div>
 </template>
 

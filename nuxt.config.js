@@ -21,11 +21,15 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/scss/all.scss',
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/bootstrapIcons.js'
+    { src: '~/plugins/bootstrap.js', mode: 'client' },
+    { src: '~/plugins/slick.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
