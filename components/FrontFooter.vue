@@ -3,7 +3,9 @@
     <router-link to="/login" class="administrator">
       <i class="bi bi-person-fill me-1" />後台管理登入&ensp;
     </router-link>
-    <p class="pt-2 mb-0">© 2022 by Chen Chien Yu</p>
+    <p class="pt-2 mb-0">
+      © 2022 by Chen Chien Yu
+    </p>
   </footer>
 </template>
 

@@ -90,7 +90,6 @@
         查看更多商品<i class="bi bi-caret-right-fill" />
       </router-link>
     </div>
-    </div>
   </section>
 </template>
 
@@ -143,10 +142,7 @@ export default {
 .carousel-wrap{
   position: relative;
   width: 100%;
-.slick-prev, .slick-next {
-}
-.slick-next {
-}
+
 .slick-prev {
   z-index: 99;
 }
