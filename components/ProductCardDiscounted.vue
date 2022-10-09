@@ -6,34 +6,45 @@
         <hr>
       </h2>
       <div class="carousel-wrap mb-4">
-        <SlickCarousel v-bind="slickOptions">
-          <!-- ------------------------------ -->
-          <div class="card border-0" style="width: 18rem;">
-            <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
-                <img src="../assets/img/sample_product02.jpg" class="card-img-top">
+        <!-- SlickCarousel標籤裡的v-if很重要!!!!! -->
+        <SlickCarousel
+          v-if="products.length > 0"
+          v-bind="slickOptions"
+        >
+          <div
+            v-for="item in products"
+            :key="item.title"
+            class="card border-0 p-3"
+            style="width: 18rem;"
+          >
+            <div class="card-body p-0">
+              <a href="#" class="text-decoration-none text-dark">
+                <img :src="item.imageUrl" class="card-img-top">
                 <h5 class="card-title my-3 px-2">
-                  Card title
+                  {{ item.title }}
                 </h5>
                 <div class="d-flex align-items-center justify-content-between">
                   <p class="text-secondary mb-0 px-2 ogPrice">
-                    原價NT$xxx
+                    原價 NT${{ item.origin_price }}
                   </p>
                   <p class="text-myred mb-0 px-2">
-                    NT$xxxx
+                    NT${{ item.price }}
                   </p>
                 </div>
-              </a>
 
-              <button class="add-cart-btn btn py-1">
-                加入購物車
-              </button>
+                <button class="add-cart-btn btn py-1">
+                  加入購物車
+                </button>
+              </a>
             </div>
           </div>
           <!-- ------------------------------- -->
-          <div class="card border-0" style="width: 18rem;">
+          <!-- <div
+            class="card border-0"
+            style="width: 18rem;"
+          >
             <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
+              <a href="#" class="text-decoration-none text-dark">
                 <img src="../assets/img/sample_product02.jpg" class="card-img-top">
                 <h5 class="card-title my-3 px-2">
                   Card title
@@ -52,95 +63,8 @@
                 加入購物車
               </button>
             </div>
-          </div>
-          <div class="card border-0" style="width: 18rem;">
-            <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
-                <img src="../assets/img/sample_product02.jpg" class="card-img-top">
-                <h5 class="card-title my-3 px-2">
-                  Card title
-                </h5>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="text-secondary mb-0 px-2 ogPrice">
-                    原價NT$xxx
-                  </p>
-                  <p class="text-myred mb-0 px-2">
-                    NT$xxxx
-                  </p>
-                </div>
-              </a>
-
-              <button class="add-cart-btn btn py-1">
-                加入購物車
-              </button>
-            </div>
-          </div>
-          <div class="card border-0" style="width: 18rem;">
-            <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
-                <img src="../assets/img/sample_product02.jpg" class="card-img-top">
-                <h5 class="card-title my-3 px-2">
-                  Card title
-                </h5>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="text-secondary mb-0 px-2 ogPrice">
-                    原價NT$xxx
-                  </p>
-                  <p class="text-myred mb-0 px-2">
-                    NT$xxxx
-                  </p>
-                </div>
-              </a>
-
-              <button class="add-cart-btn btn py-1">
-                加入購物車
-              </button>
-            </div>
-          </div>
-          <div class="card border-0" style="width: 18rem;">
-            <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
-                <img src="../assets/img/sample_product02.jpg" class="card-img-top">
-                <h5 class="card-title my-3 px-2">
-                  Card title
-                </h5>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="text-secondary mb-0 px-2 ogPrice">
-                    原價NT$xxx
-                  </p>
-                  <p class="text-myred mb-0 px-2">
-                    NT$xxxx
-                  </p>
-                </div>
-              </a>
-
-              <button class="add-cart-btn btn py-1">
-                加入購物車
-              </button>
-            </div>
-          </div>
-          <div class="card border-0" style="width: 18rem;">
-            <div class="card-body p-1">
-              <a href="" class="text-decoration-none text-dark">
-                <img src="../assets/img/sample_product02.jpg" class="card-img-top">
-                <h5 class="card-title my-3 px-2">
-                  Card title
-                </h5>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="text-secondary mb-0 px-2 ogPrice">
-                    原價NT$xxx
-                  </p>
-                  <p class="text-myred mb-0 px-2">
-                    NT$xxxx
-                  </p>
-                </div>
-              </a>
-
-              <button class="add-cart-btn btn py-1">
-                加入購物車
-              </button>
-            </div>
-          </div>
+          </div> -->
+          <!-- ------------------------------- -->
         </slickcarousel>
       </div>
     </div>
@@ -156,6 +80,15 @@
 
 <script>
 export default {
+  props: {
+    products: {
+      type: Array,
+      required: true,
+      default: function () {
+        return ['hello world']
+      }
+    }
+  },
   data () {
     return {
       slickOptions: {
@@ -172,8 +105,8 @@ export default {
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3
+              slidesToShow: 2,
+              slidesToScroll: 1
             }
           },
           {
@@ -194,6 +127,10 @@ export default {
         ]
       }
     }
+  },
+  created () {
+  },
+  mounted () {
   }
 }
 </script>
@@ -245,6 +182,11 @@ export default {
     &:hover {
       transform: scale(102%);
     }
+
+    .card-body {
+      border: 1px solid #ddd;
+      border-radius: .5rem;
+    }
   }
 
   .add-cart-btn {
@@ -256,7 +198,6 @@ export default {
     color: #333;
 
     &:hover {
-      border: 1px solid transparent;
       background: #aaa;
       color: #fff;
     }

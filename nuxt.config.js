@@ -28,8 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/bootstrap.js', mode: 'client' },
-    { src: '~/plugins/slick.js', mode: 'client' }
+    '~/plugins/bootstrap.client.js',
+    '~/plugins/slick.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
