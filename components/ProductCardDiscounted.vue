@@ -18,7 +18,11 @@
             style="width: 18rem;"
           >
             <div class="card-body p-0">
-              <a href="#" class="text-decoration-none text-dark">
+              <a
+                href="#"
+                class="text-decoration-none text-dark"
+                @click.prevent="goProductItem(item.id)"
+              >
                 <img :src="item.imageUrl" class="card-img-top">
                 <h5 class="card-title my-3 px-2">
                   {{ item.title }}
@@ -131,6 +135,11 @@ export default {
   created () {
   },
   mounted () {
+  },
+  methods: {
+    goProductItem (id) {
+      this.$router.push(`/productItem/${id}`)
+    }
   }
 }
 </script>
