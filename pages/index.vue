@@ -1,11 +1,10 @@
 <template>
   <div class="wrapper">
-    <NavbarView />
     <HomeCarousel />
     <CouponBanner />
     <HotProduct />
     <MonthFeatured />
-    <ProductCardDiscounted :products="products" />
+    <ProductCardDiscount :products="products" />
     <FrontFooter />
   </div>
 </template>

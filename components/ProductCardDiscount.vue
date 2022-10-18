@@ -31,7 +31,7 @@
                   <p class="text-secondary mb-0 px-2 ogPrice">
                     原價 NT${{ item.origin_price }}
                   </p>
-                  <p class="text-myred mb-0 px-2">
+                  <p class="text-danger mb-0 px-2">
                     NT${{ item.price }}
                   </p>
                 </div>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="text-center">
-      <router-link to="product_list/全部商品" class="btn text-white more-product-btn px-5">
+      <router-link to="ProductList/全部商品" class="btn text-white more-product-btn px-5">
         查看更多商品
         <i class="bi bi-caret-right-fill" />
       </router-link>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer text-center">
+  <footer class="footer text-center py-4">
     <router-link to="/login" class="administrator">
       <i class="bi bi-person-fill me-1" />後台管理登入&ensp;
     </router-link>
@@ -13,7 +13,6 @@
 .footer {
   background: #EBEBEB;
   color: #5A5B5B;
-  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;

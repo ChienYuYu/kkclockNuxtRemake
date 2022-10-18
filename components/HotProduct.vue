@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="text-center">
-        <router-link to="product_list/全部商品" class="go-buy btn px-5">
+        <router-link to="ProductList/全部商品" class="go-buy btn px-5">
           <i class="bi bi-cart me-1" />
           購物去
           <i class="bi bi-caret-right" />

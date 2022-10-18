@@ -30,7 +30,7 @@
             </li>
             <li class="nav-item">
               <router-link
-                to="/product_list/全部商品"
+                to="/ProductList/全部商品"
                 class="nav-link"
               >
                 購物
